@@ -28,8 +28,8 @@ from starlette.responses import Response
 import os
 
 # Get Firestore DB instance
-cred = credentials.Certificate('onehub-uk-1fc08-firebase-adminsdk-5b38x-8fbd122fa2.json')
-firebase_admin.initialize_app(cred, name='firestore-uk', options={'projectId': 'onehub-uk-1fc08', 'storageBucket': 'onehub-uk-1fc08.appspot.com'})
+cred = credentials.Certificate('2.json')
+firebase_admin.initialize_app(cred, name='firestore-uk', options={'projectId': 'OH-8', 'storageBucket': 'oH.COM'})
 db = firestore.client(app=firebase_admin.get_app(name='firestore-uk'))
 # UK bucket
 bucket = storage.bucket(app=firebase_admin.get_app(name='firestore-uk'))
@@ -38,8 +38,8 @@ cred2 = credentials.ApplicationDefault()
 firebase_admin.initialize_app(cred2, {'projectId': 'onehub-in-app',}, name='in')
 db2 = firestore.client(app=firebase_admin.get_app(name='in'))
 
-cred3 = credentials.Certificate('onehub-copy-firebase-adminsdk-fbsvc-37305d8484.json')
-firebase_admin.initialize_app(cred3, name='onehub-copy', options={'projectId': 'onehub-copy','storageBucket': 'onehub-copy.firebasestorage.app'})
+cred3 = credentials.Certificate('ohub.json')
+firebase_admin.initialize_app(cred3, name='onehub-copy', options={'projectId': 'ohub','storageBucket': 'ohub.firebasestorage.app'})
 # india bucket
 bucket2 = storage.bucket(app=firebase_admin.get_app(name='onehub-copy'))
 
